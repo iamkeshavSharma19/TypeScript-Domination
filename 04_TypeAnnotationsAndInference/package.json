@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/05_UnionAndAny.ts",
+    "start": "node dist/05_UnionAndAny.js",
     "dev": "npx tsc"
   },
   "keywords": [],
