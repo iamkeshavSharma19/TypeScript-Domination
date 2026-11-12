@@ -30,3 +30,17 @@ console.log(message);
 
 const customMessage: string = getMsg("Namaste TypeScript");
 console.log(customMessage);
+
+function orderChai(size: "medium" | "small" | "large" | number) {
+  if (size === "small") {
+    return `small cutting chai...`;
+  }
+
+  if (size === "medium" || size === "large") {
+    return `make extra chai`;
+  }
+
+  return `chai order ${size}`;
+}
+
+
