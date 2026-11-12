@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/05_UnionAndAny.js",
+    "start": "node dist/06_TypeNarrowingAndTypeGuards.js",
     "dev": "npx tsc"
   },
   "keywords": [],
