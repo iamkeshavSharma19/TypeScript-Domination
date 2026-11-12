@@ -1,3 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-//# sourceMappingURL=settingUpTypescript.js.map
+//?npm init -y
+//?npm i -D typescript
+//?npx tsc --init
+//# sourceMappingURL=SettingUpTypescript.js.map

@@ -1,2 +1,2 @@
 export {};
-//# sourceMappingURL=settingUpTypescript.d.ts.map
+//# sourceMappingURL=SettingUpTypescript.d.ts.map
