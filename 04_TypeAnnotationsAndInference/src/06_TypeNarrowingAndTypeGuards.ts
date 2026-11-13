@@ -1,4 +1,4 @@
-function getChai(kind: string | number) {
+function getChai(kind: string | number): string {
   if (typeof kind === "string") {
     //?Here it is guaranteed that kind data type is string only.
     //?Here the advantage is that you get to know what methods you need to suggest while doing like kind.length.
@@ -10,9 +10,9 @@ function getChai(kind: string | number) {
   return `Chai order: ${kind}`;
 }
 
-const chaiType: string | number = getChai("Masala Tea");
+const chaiType: string = getChai("Masala Tea");
 console.log(chaiType);
-const chaiNumber: string | number = getChai(10);
+const chaiNumber: string = getChai(10);
 console.log(chaiNumber);
 
 //* let say you sent me a message, now you may or may not have sent the message,so basically by putting in a Question Mark We Make it optional
@@ -43,4 +43,42 @@ function orderChai(size: "medium" | "small" | "large" | number) {
   return `chai order ${size}`;
 }
 
+class KulhadChai {
+  serve() {
+    return `Serving Kulhad Chai`;
+  }
+}
+
+class Cutting {
+  serve() {
+    return `Serving cutting chai`;
+  }
+}
+
+//?Chai can be the object of either kulhad chai or cutting 
+function serve(chai: KulhadChai | Cutting): string {
+  console.log(chai);
+  if (chai instanceof KulhadChai) {
+    return chai.serve();
+  }
+
+  return chai.serve();
+}
+
+
+const kulhad = new KulhadChai();
+const cutting = new Cutting();
+console.log(kulhad);
+console.log(cutting);
+
+console.log(serve(kulhad));
+
+//?TypeScript also gives us the super power of making our own custom types.
+
+//? By using the keyword type, you can make your own custom types.
+
+type ChaiOrder = {
+  type: string;
+  sugar: number;
+};
 
