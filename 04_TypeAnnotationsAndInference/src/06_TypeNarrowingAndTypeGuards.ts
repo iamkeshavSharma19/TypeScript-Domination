@@ -55,7 +55,7 @@ class Cutting {
   }
 }
 
-//?Chai can be the object of either kulhad chai or cutting 
+//?Chai can be the object of either kulhad chai or cutting
 function serve(chai: KulhadChai | Cutting): string {
   console.log(chai);
   if (chai instanceof KulhadChai) {
@@ -64,7 +64,6 @@ function serve(chai: KulhadChai | Cutting): string {
 
   return chai.serve();
 }
-
 
 const kulhad = new KulhadChai();
 const cutting = new Cutting();
@@ -81,4 +80,21 @@ type ChaiOrder = {
   type: string;
   sugar: number;
 };
+
+function isChaiOrder(obj: any): obj is ChaiOrder {
+  return (
+    typeof obj === "object" &&
+    obj !== null &&
+    typeof obj.type === "string" &&
+    typeof obj.sugar === "number"
+  );
+}
+
+function serveOrder(item: ChaiOrder | string) {
+  if (isChaiOrder(item)) {
+    return `Serving ${item.type} chai with ${item.sugar}`;
+  }
+
+  return `Serving custom chai`;
+}
 
