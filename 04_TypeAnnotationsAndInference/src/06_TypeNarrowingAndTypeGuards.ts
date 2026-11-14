@@ -105,3 +105,6 @@ console.log(serveOrder({
 }))
 
 console.log(serveOrder("Adrak Special"));
+
+
+//? One More examples of Type Guards
