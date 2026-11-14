@@ -81,6 +81,7 @@ type ChaiOrder = {
   sugar: number;
 };
 
+
 function isChaiOrder(obj: any): obj is ChaiOrder {
   return (
     typeof obj === "object" &&
@@ -98,3 +99,9 @@ function serveOrder(item: ChaiOrder | string) {
   return `Serving custom chai`;
 }
 
+console.log(serveOrder({
+    type: "Masala",
+    sugar: 2
+}))
+
+console.log(serveOrder("Adrak Special"));
