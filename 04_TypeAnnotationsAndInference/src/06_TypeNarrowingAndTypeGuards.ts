@@ -107,4 +107,46 @@ console.log(serveOrder({
 console.log(serveOrder("Adrak Special"));
 
 
-//? One More examples of Type Guards
+//? One More examples of Type Guards.
+type MasalaChai = {
+    type: "masala",
+    spiceLevel: number
+}
+
+type GingerChai = {
+    type: "ginger",
+    amount: number
+}
+
+type ElaichiChai = {
+    type: "elaichi",
+    aroma: number
+}
+
+type Chai = MasalaChai | GingerChai | ElaichiChai
+
+function MakeChai (order: Chai) {
+    switch (order.type) {
+      case "masala":
+          return `Masala Chai`
+          break;
+
+      case "ginger":
+          return `Ginger Chai`
+          break;
+
+      case "elaichi":
+          return `Elaichi Chai`
+          break;
+    
+      default:
+        break;
+    }
+}
+
+const tea = MakeChai({
+    type: "ginger",
+    amount: 10
+})
+
+console.log(tea);
