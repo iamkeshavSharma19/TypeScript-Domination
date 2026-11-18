@@ -81,7 +81,6 @@ type ChaiOrder = {
   sugar: number;
 };
 
-
 function isChaiOrder(obj: any): obj is ChaiOrder {
   return (
     typeof obj === "object" &&
@@ -99,54 +98,55 @@ function serveOrder(item: ChaiOrder | string) {
   return `Serving custom chai`;
 }
 
-console.log(serveOrder({
+console.log(
+  serveOrder({
     type: "Masala",
-    sugar: 2
-}))
+    sugar: 2,
+  }),
+);
 
 console.log(serveOrder("Adrak Special"));
 
-
 //? One More examples of Type Guards.
 type MasalaChai = {
-    type: "masala",
-    spiceLevel: number
-}
+  type: "masala";
+  spiceLevel: number;
+};
 
 type GingerChai = {
-    type: "ginger",
-    amount: number
-}
+  type: "ginger";
+  amount: number;
+};
 
 type ElaichiChai = {
-    type: "elaichi",
-    aroma: number
-}
+  type: "elaichi";
+  aroma: number;
+};
 
-type Chai = MasalaChai | GingerChai | ElaichiChai
+type Chai = MasalaChai | GingerChai | ElaichiChai;
 
-function MakeChai (order: Chai) {
-    switch (order.type) {
-      case "masala":
-          return `Masala Chai`
-          break;
+function MakeChai(order: Chai) {
+  switch (order.type) {
+    case "masala":
+      return `Masala Chai`;
+      break;
 
-      case "ginger":
-          return `Ginger Chai`
-          break;
+    case "ginger":
+      return `Ginger Chai`;
+      break;
 
-      case "elaichi":
-          return `Elaichi Chai`
-          break;
-    
-      default:
-        break;
-    }
+    case "elaichi":
+      return `Elaichi Chai`;
+      break;
+
+    default:
+      break;
+  }
 }
 
 const tea = MakeChai({
-    type: "ginger",
-    amount: 10
-})
+  type: "ginger",
+  amount: 10,
+});
 
 console.log(tea);
